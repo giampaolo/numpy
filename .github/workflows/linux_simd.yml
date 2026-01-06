@@ -26,16 +26,7 @@ name: Linux SIMD tests
 # - intel_sde:
 #   Executes only the SIMD tests for various AVX512 SIMD extensions under the Intel Software Development Emulator (SDE).
 #
-on:
-  pull_request:
-    branches:
-      - main
-      - maintenance/**
-    paths-ignore:
-      - '**.pyi'
-      - '**.md'
-      - '**.rst'
-      - 'tools/stubtest/**'
+on: [push, pull_request]
 
 defaults:
   run:

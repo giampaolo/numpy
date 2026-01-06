@@ -1,15 +1,6 @@
 name: macOS tests
 
-on:
-  pull_request:
-    branches:
-      - main
-      - maintenance/**
-    paths-ignore:
-      - '**.pyi'
-      - '**.md'
-      - '**.rst'
-      - 'tools/stubtest/**'
+on: [push, pull_request]
 
 permissions:
    contents: read  # to fetch code (actions/checkout)

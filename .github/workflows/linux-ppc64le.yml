@@ -1,16 +1,6 @@
 name: Native ppc64le Linux Test
 
-on:
-  pull_request:
-    branches:
-      - main
-      - maintenance/**
-    paths-ignore:
-      - '**.pyi'
-      - '**.md'
-      - '**.rst'
-      - 'tools/stubtest/**'
-  workflow_dispatch:
+on: [push, pull_request]
 
 permissions:
   contents: read

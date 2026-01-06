@@ -4,17 +4,7 @@
 #     if: github.repository == 'numpy/numpy'
 name: Wheel builder
 
-on:
-  pull_request:
-    branches:
-      - main
-      - maintenance/**
-    paths-ignore:
-      - '**.pyi'
-      - '**.md'
-      - '**.rst'
-      - 'tools/stubtest/**'
-  workflow_dispatch:
+on: [push, pull_request]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}

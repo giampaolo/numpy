@@ -5,20 +5,7 @@ name: Linux tests
 # build-via-sdist, run benchmarks, measure code coverage, and other build
 # options.
 
-on:
-  push:
-    branches:
-      # coverage comparison in the "full" step needs to run on main after merges
-      - main
-  pull_request:
-    branches:
-      - main
-      - maintenance/**
-    paths-ignore:
-      - '**.pyi'
-      - '**.md'
-      - '**.rst'
-      - 'tools/stubtest/**'
+on: [push, pull_request]
 
 defaults:
   run:

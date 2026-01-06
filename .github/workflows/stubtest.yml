@@ -3,20 +3,7 @@ permissions: read-all
 
 # Stubtest depends on different branches and paths than mypy does, so we have a separate workflow.
 
-on:
-  pull_request:
-    branches:
-      - "main"
-      - "maintenance/2.**"
-      # Stubtest requires numpy>=2.4
-      - "!maintenance/2.[0-3].x"
-    paths:
-      - ".github/workflows/stubtest.yml"
-      - "numpy/**"
-      - "!numpy/**/tests/**"
-      - "requirements/test_requirements.txt"
-      - "tools/stubtest/**"
-  workflow_dispatch:
+on: [push, pull_request]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}

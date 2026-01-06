@@ -9,17 +9,7 @@
 
 name: Linux Qemu tests
 
-on:
-  pull_request:
-    branches:
-      - main
-      - maintenance/**
-    paths-ignore:
-      - '**.pyi'
-      - '**.md'
-      - '**.rst'
-      - 'tools/stubtest/**'
-  workflow_dispatch:
+on: [push, pull_request]
 
 defaults:
   run:

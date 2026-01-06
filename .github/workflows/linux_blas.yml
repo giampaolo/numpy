@@ -35,16 +35,7 @@ name: BLAS tests (Linux)
 #   - atlas:
 #         Simple test for LP64 via pkg-config
 
-on:
-  pull_request:
-    branches:
-      - main
-      - maintenance/**
-    paths-ignore:
-      - '**.pyi'
-      - '**.md'
-      - '**.rst'
-      - 'tools/stubtest/**'
+on: [push, pull_request]
 
 defaults:
   run:
