@@ -1,6 +1,7 @@
 import os
 
 import pytest
+import psutil
 from psleak import Checkers, LeakTest as LT, MemoryLeakTestCase
 
 import numpy as np
@@ -106,6 +107,9 @@ api = {
 
 @pytest.mark.skipif(
     "PYTHONMALLOC" not in os.environ, reason="PYTHONMALLOC not set"
+)
+@pytest.mark.skipif(
+    not hasattr(psutil, "heap_info"), reason="psutil.heap_info() not supported"
 )
 class TestNumpyLeaks(MemoryLeakTestCase):
     verbosity = 1
