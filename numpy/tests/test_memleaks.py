@@ -101,6 +101,13 @@ api = {
     "ifft2": LT(np.fft.ifft2, [[1, 2], [3, 4]]),
     "fftn": LT(np.fft.fftn, [[1, 2], [3, 4]]),
     "ifftn": LT(np.fft.ifftn, [[1, 2], [3, 4]]),
+    # RFFTs
+    "rfft": LT(np.fft.rfft, [1, 2, 3, 4]),
+    "irfft": LT(np.fft.irfft, [1, 2, 3, 4]),
+    "rfft2": LT(np.fft.rfft2, [[1, 2], [3, 4]]),
+    "irfft2": LT(np.fft.irfft2, [[1, 2], [3, 4]]),
+    "rfftn": LT(np.fft.rfftn, [[1, 2], [3, 4]]),
+    "irfftn": LT(np.fft.irfftn, [[1, 2], [3, 4]]),
     # random number generation
     "rand": LT(np.random.rand, 5),
     "randn": LT(np.random.randn, 5),
