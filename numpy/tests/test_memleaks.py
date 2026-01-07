@@ -108,6 +108,9 @@ api = {
     "irfft2": LT(np.fft.irfft2, [[1, 2], [3, 4]]),
     "rfftn": LT(np.fft.rfftn, [[1, 2], [3, 4]]),
     "irfftn": LT(np.fft.irfftn, [[1, 2], [3, 4]]),
+    # Hermitian FFTs
+    "hfft": LT(np.fft.hfft, [1, 2, 3, 4]),
+    "ihfft": LT(np.fft.ihfft, [1, 2, 3, 4]),
     # random number generation
     "rand": LT(np.random.rand, 5),
     "randn": LT(np.random.randn, 5),
