@@ -181,5 +181,6 @@ jobs:
 
       - name: Run memory leak tests ${{ matrix.TEST_MODE }}
         run: |
+          pip install psleak
           cd tools
           PYTHONMALLOC=malloc PYTHONUNBUFFERED=1 python -m pytest -v --pyargs numpy.tests.test_memleaks
